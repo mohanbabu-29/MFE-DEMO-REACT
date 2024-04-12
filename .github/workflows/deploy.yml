@@ -16,12 +16,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18.20.0'  # Choose your desired Node.js version
+          node-version: '14'  # Choose your desired Node.js version
 
       - name: Install dependencies
         run: npm install
 
-      # Add any other build steps here, such as building your app or generating static files
+      - name: Build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.2.0
