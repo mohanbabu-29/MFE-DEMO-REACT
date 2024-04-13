@@ -1,6 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   mode: 'development',
@@ -8,7 +8,7 @@ module.exports = {
     'singleSPA.config': './singleSPA.config.js',
   },
   output: {
-    publicPath: '/dist/',
+    publicPath: '/', // Adjusted publicPath
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
@@ -43,6 +43,6 @@ module.exports = {
     historyApiFallback: true
   },
   optimization: {
-    minimize: false, // Disable minification
+    minimize: true, // Enable minification
   }
 };
